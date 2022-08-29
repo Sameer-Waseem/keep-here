@@ -4,7 +4,7 @@
   "description": "A website where you can store notes",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "test": "jest --watchAll --verbose"
   },
   "engines": {
