@@ -1,3 +1,4 @@
+const config = require("config");
 const express = require("express");
 const mongoose = require("mongoose");
 const note = require("./routes/notes");
@@ -13,7 +14,7 @@ app.use("/api", user);
 app.use("/api/note", note);
 
 mongoose
-  .connect("mongodb://localhost/keep-here")
+  .connect(config.get("db"))
   .then(() => console.log("Connected to MongoDB..."))
   .catch((error) => console.log("Could not connected to MongoDB...", error));
 
