@@ -1,0 +1,36 @@
+{
+  "name": "keep-here",
+  "version": "1.0.0",
+  "description": "A website where you can store notes",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "jest --watchAll --verbose"
+  },
+  "engines": {
+    "node": "14.20.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sameer-Waseem/keep-here.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sameer-Waseem/keep-here/issues"
+  },
+  "homepage": "https://github.com/Sameer-Waseem/keep-here#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "compression": "^1.7.4",
+    "express": "^4.18.1",
+    "helmet": "^5.1.1",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
