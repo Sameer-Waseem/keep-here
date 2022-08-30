@@ -26,7 +26,7 @@ router.post("/register", async (req, res) => {
 
     const token = jwt.sign(
       { id: user._id, email: user.email },
-      "jwtPrivateKey"
+      config.get("jwtPrivateKey")
     );
 
     res.status(200).json({ user, token });
@@ -52,7 +52,7 @@ router.post("/login", async (req, res) => {
 
     const token = jwt.sign(
       { id: user._id, email: user.email },
-      "jwtPrivateKey"
+      config.get("jwtPrivateKey")
     );
 
     res.status(200).json({ token });

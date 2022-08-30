@@ -1,3 +1,4 @@
 {
+    "jwtPrivateKey": "keep_here_jwtPrivateKey",
     "db": "keep_here_db"
 }
