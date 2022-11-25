@@ -13,6 +13,7 @@ function validateNote(note) {
   const schema = Joi.object({
     title: Joi.string().min(1).max(50).required(),
     description: Joi.string().min(10).max(200).required(),
+    user_id: Joi.string().required(),
   });
 
   return schema.validate(note);

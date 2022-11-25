@@ -4,6 +4,16 @@ const auth = require("../middleware/auth");
 
 const router = express.Router();
 
+router.get("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const note = await Note.findById(id);
+    res.status(200).json({ note });
+  } catch (error) {
+    res.status(400).json({ error });
+  }
+});
+
 router.get("/", async (req, res) => {
   try {
     const notes = await Note.find();
@@ -15,12 +25,12 @@ router.get("/", async (req, res) => {
 
 router.post("/", auth, async (req, res) => {
   try {
-    const { title, description } = req.body;
+    const { title, description, user_id } = req.body;
 
     const { error } = Validate(req.body);
     if (error) return res.status(400).json({ error: error.details[0].message });
 
-    let notes = new Note({ title, description, user_id: req.user.id });
+    let notes = new Note({ title, description, user_id });
     await notes.save();
 
     res.status(200).json({ notes });
