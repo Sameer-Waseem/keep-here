@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const noteSchema = new mongoose.Schema({
   title: { type: String, required: true, min: 3, max: 50 },
   description: { type: String, required: true, min: 10, max: 200 },
-  user_id: { type: String, required: true },
+  user_id: { type: Number, required: true },
 });
 
 const Note = mongoose.model("Note", noteSchema);
@@ -13,7 +13,7 @@ function validateNote(note) {
   const schema = Joi.object({
     title: Joi.string().min(1).max(50).required(),
     description: Joi.string().min(10).max(200).required(),
-    user_id: Joi.string().required(),
+    user_id: Joi.number().integer().required(),
   });
 
   return schema.validate(note);
