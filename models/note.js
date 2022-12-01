@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const noteSchema = new mongoose.Schema({
   title: { type: String, required: true, min: 3, max: 50 },
   description: { type: String, required: true, min: 10, max: 200 },
-  user_id: { type: String, unique: true, required: true },
+  user_id: { type: String, required: true },
 });
 
 const Note = mongoose.model("Note", noteSchema);
